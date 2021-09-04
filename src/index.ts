@@ -2,14 +2,13 @@ import { MikroORM } from "@mikro-orm/core"
 import { __prod__ } from "./constants"
 import { Post } from "./entities/Post"
 
+import microConfig from "./mikro-orm.config";
+
 const main = async () => {
 
-    const orm = await MikroORM.init({
-        entities: [Post],
-        dbName: 'redundit',
-        type: 'postgresql',
-        debug: !__prod__
-    });
+    const orm = await MikroORM.init(microConfig);
+
+    await orm.getMigrator().up();
 
     const post = orm.em.create(Post, {title: "My First post"})
 
@@ -17,4 +16,6 @@ const main = async () => {
 
 }
 
-main();
+main().catch(err => {
+    console.log(err)
+});

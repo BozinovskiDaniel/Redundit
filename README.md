@@ -24,6 +24,7 @@ Redundit - A Full-stack Reddit clone
 * Redis
 * Next.js
 * TypeGraphQL
+* Docker
 
 
 <hr>

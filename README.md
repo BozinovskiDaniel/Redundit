@@ -14,17 +14,14 @@ Redundit - A Full-stack Reddit clone
 
 ### Technologies
 
-* React
-* Node
-* TypeScript
-* GraphQL
-* URQL/Apollo
-* PostgreSQL
-* MikroORM
-* Redis
-* Next.js
-* TypeGraphQL
-* Docker
-
+-   React
+-   Node
+-   Express
+-   TypeScript
+-   TypeORM
+-   PostgreSQL
+-   Next.js
+-   Tailwind CSS
+-   Docker
 
 <hr>

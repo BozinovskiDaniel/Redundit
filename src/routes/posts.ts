@@ -16,7 +16,7 @@ const createPost = async (req: Request, res: Response) => {
 
     try {
         // Find sub
-        const subRecord = await Sub.findOneOrFail({ name: sub })
+        const subRecord = await Sub.findOneOrFail({ name: sub }) 
 
         const post = new Post({title, body, user, sub: subRecord})
         await post.save() // Save post

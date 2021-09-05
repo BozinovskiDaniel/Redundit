@@ -5,6 +5,8 @@ import cookie from "cookie";
 
 import { User } from './../entities/User';
 import { validate, isEmpty } from "class-validator";
+import auth from "../middleware/auth"
+
 
 const register = async (req: Request, res: Response) => {
     const {email, username, password} = req.body;
@@ -84,24 +86,8 @@ const login = async (req: Request, res: Response) => {
 
 }
 
-const me = async (req: Request, res: Response) => {
-
-    try {
-        const token = req.cookies.token // Get token
-
-        if (!token) throw new Error("Unauthenticated") // If no token
-
-        const { username }: any = jwt.verify(token, process.env.JWT_SECRET) // Get username
-
-        const user = await User.findOne({username}) // Look in db for user
-
-        if (!user) throw new Error("Unauthenticated") // If no user, return unauth
-
-        return res.json(user) // Return user
-    } catch (err) {
-        console.log(err)
-        return res.status(401).json({error: err.message})
-    }
+const me = (_: Request, res: Response) => {
+    return res.json(res.locals.user)
 }
 
 const logout = (req: Request, res: Response) => {
@@ -120,7 +106,7 @@ const logout = (req: Request, res: Response) => {
 const router = Router();
 router.post('/register', register)
 router.post('/login', login)
-router.get('/me', me)
-router.get('/logout', logout)
+router.get('/me', auth, me)
+router.get('/logout', auth, logout)
 
 export default router;

@@ -1,6 +1,6 @@
 import { NextFunction, Response } from 'express';
 import { Request } from 'express';
-export default (req: Request, res: Response, next: NextFunction) => {
+export default (req: Request, _: Response, next: NextFunction) => {
 
     Object.keys(req.body).forEach(key => {
 

@@ -9,6 +9,7 @@
      "emitDecoratorMetadata": true,
      "experimentalDecorators": true,
      "sourceMap": true,
+
      // Additions
      "esModuleInterop": true,
      // Strict stuff
@@ -19,6 +20,7 @@
      "strictBindCallApply": true,
      // "strictPropertyInitialization": true,
      "noImplicitThis": true,
+     
      // Extra
      "alwaysStrict": true,
      // "noUnusedLocals": true,

@@ -11,7 +11,7 @@ export default async (req: Request, res: Response, next: NextFunction) => {
 
         if (!token) throw new Error("Unauthenticated") // If no token
 
-        const { username }: any = jwt.verify(token, process.env.JWT_SECRET) // Get username
+        const { username }: any = jwt.verify(token, process.env.JWT_SECRET!) // Get username
 
         const user = await User.findOne({username}) // Look in db for user
 

@@ -67,7 +67,7 @@ const login = async (req: Request, res: Response) => {
             return res.status(401).json({password: "Password is incorrect"})
         }
 
-        const token = jwt.sign({username}, process.env.JWT_SECRET)
+        const token = jwt.sign({username}, process.env.JWT_SECRET!)
 
         // Set a cookie in the header with the token
         res.set('Set-Cookie', cookie.serialize('token', token, {
@@ -80,8 +80,9 @@ const login = async (req: Request, res: Response) => {
 
         return res.json(user)
     
-    } catch (error) {
-        
+    } catch (err) {
+        console.log(err)
+        return res.json({error: 'Something went wrong'})
     }
 
 }
@@ -90,7 +91,7 @@ const me = (_: Request, res: Response) => {
     return res.json(res.locals.user)
 }
 
-const logout = (req: Request, res: Response) => {
+const logout = (_: Request, res: Response) => {
 
     res.set('Set-Cookie', cookie.serialize('token', '', {
         httpOnly: true,

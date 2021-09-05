@@ -3,7 +3,7 @@ import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import cookie from "cookie";
 
-import { User } from './../entities/User';
+import User from './../entities/User';
 import { validate, isEmpty } from "class-validator";
 import auth from "../middleware/auth"
 

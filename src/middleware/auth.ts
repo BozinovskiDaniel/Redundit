@@ -1,6 +1,6 @@
 import jwt from 'jsonwebtoken';
 import { NextFunction, Request, Response } from 'express';
-import { User } from '../entities/User';
+import User from '../entities/User';
 
 // Middleware for auth
 export default async (req: Request, res: Response, next: NextFunction) => {

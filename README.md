@@ -1,18 +1,16 @@
 # 🍁 Redundit
 
-### Description
+## Description
 
 Redundit - A Full-stack Reddit clone
 
-<hr>
 
-### Creator
+## Creator(s)
 
 @BozinovskiDaniel
 
-<hr>
 
-### Technologies
+## Technology Stack
 
 -   React
 -   Node
@@ -24,4 +22,10 @@ Redundit - A Full-stack Reddit clone
 -   Tailwind CSS
 -   Docker
 
-<hr>
+## User Stories
+
+#### ES1:
+
+#### ES2:
+
+#### ES3:

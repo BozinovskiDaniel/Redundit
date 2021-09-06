@@ -16,10 +16,10 @@ import Document, {
       return (
         <Html>
           <Head>
-            <title>Readit</title>
+            <title>Redundit</title>
             <link rel="icon" type="image/svg+xml" href="/reddit.svg" />
-            <meta property="og:site_name" content="readit" />
-            {/* <meta property="twitter:site" content="@readit" /> */}
+            <meta property="og:site_name" content="redundit" />
+            {/* <meta property="twitter:site" content="@redundit" /> */}
             <meta property="twitter:card" content="summary" />
             <meta property="og:type" content="website" />
             <meta

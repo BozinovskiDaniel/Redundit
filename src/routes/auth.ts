@@ -8,11 +8,11 @@ import { validate, isEmpty } from "class-validator";
 import auth from "../middleware/auth"
 
 const mapErrors = (errors: Object[]) => {
-    return errors.reduce((prev: any, err: any) => {
-      prev[err.property] = Object.entries(err.constraints)[0][1]
-      return prev
-    }, {})
-  }
+  return errors.reduce((prev: any, err: any) => {
+    prev[err.property] = Object.entries(err.constraints)[0][1]
+    return prev
+  }, {})
+}
 
   const register = async (req: Request, res: Response) => {
     const { email, username, password } = req.body
@@ -63,7 +63,7 @@ const login = async (req: Request, res: Response) => {
 
         const user = await User.findOne({username})
         
-        if (!user) return res.status(400).json({error: "User not found"})
+        if (!user) return res.status(400).json({username: "User not found"})
     
         const passwordMatches = await bcrypt.compare(password, user.password)
 
